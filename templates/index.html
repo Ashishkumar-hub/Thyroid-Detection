@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="color:black">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Thyroid Detection </h2>
+	    <h3>Age</h3><input id="first" name="Age" required="required">
+            <h3>Sex</h3><select id="second" name="Sex" required="required">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+	    </select>
+            <h3>OnThyroxine</h3><select id="third" name="OnThyroxine" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+	    </select>
+	    <h3>QueryOnThyroxine</h3><select id="fourth" name="QueryOnThyroxine" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+	    </select>
+            <h3>On Anti Thyroid Medication</h3><select id="fifth" name="OnAntiThyroidMedication" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+	    </select>
+            <h3>Sick</h3><select id="sixth" name="Sick" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+	    </select> 
+            <h3>Pregnant</h3><select id="seventh" name="Pregnant" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <h3>Thyroid Surgery</h3><select id="eighth" name="ThyroidSurgery" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <h3>I131 Treatment</h3><select id="nineth" name="I131" id="research" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+	    <h3>QueryHypothyroid</h3><select id="tenth" name="QueryHypothyroid" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+	    </select>
+	    <h3>QueryHyperthyroid</h3><select id="eleventh" name="QueryHyperthyroid" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+	    </select>
+	    <h3>Lithium</h3><select id="twelth" name="Lithium" id="research" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+	    <h3>Goitre</h3><select id="thirteenth" name="Goitre" id="research" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+	    <h3>Tumor</h3><select id="fourteenth" name="Tumor" id="research" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+	    <h3>Hypopituritory</h3><select id="fifeteenth" name="Hypopituritory" id="research" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+	    <h3>Psych</h3><select id="sixteenth" name="Psych" id="research" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+	    <h3>T3</h3><input id="seventeenth" name="T3" id="research" required="required">
+	    <h3>T4U</h3><input id="eightteenth" name="T4U" id="research" required="required">
+	    <h3>ReferralSourceOther ()</h3><input id="nineteenth" name="ReferralSourceOther" required="required">
+	    
+	    <br><br><button id="sub" type="submit ">Find Person is Having Disease or Not</button>
+            <br>
+        </form>
+        <br><br><h3>{{ prediction_texts}}</h3>
+    </div>
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+            width: 200px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #fifth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #sixth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #seventh {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #eighth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #nineth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #tenth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #eleventh {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #twelth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        #thirteenth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+	#fourteenth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+	#fifeteenth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+	#sixteenth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+	#seventeenth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+	#eightteenth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+	#nineteenth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</body>
+</html>

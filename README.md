@@ -1,2 +1,3 @@
 # Thyroid-Detection
-https://thyroidetect.azurewebsites.net/predict
+
+https://thyroidetect.azurewebsites.net

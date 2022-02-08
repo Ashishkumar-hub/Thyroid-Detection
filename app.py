@@ -14,7 +14,7 @@ def Home():
 standard_to = StandardScaler()
 @app.route("/predict", methods=['POST'])
 def predict():
-    Fuel_Type_Diesel=0
+    
     if request.method == 'POST':
         Age=request.form['Age']
         Sex=request.form['Sex']

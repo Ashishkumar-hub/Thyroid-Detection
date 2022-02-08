@@ -9,27 +9,27 @@
     <div style="color:black">
         <form action="{{ url_for('predict')}}" method="post">
             <h2>Thyroid Detection </h2>
-	    <h3>Age</h3><input id="first" name="Age" required="required">
+            <h3>Age</h3><input id="first" name="Age" required="required">
             <h3>Sex</h3><select id="second" name="Sex" required="required">
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
-	    </select>
+	        </select>
             <h3>OnThyroxine</h3><select id="third" name="OnThyroxine" required="required">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-	    </select>
-	    <h3>QueryOnThyroxine</h3><select id="fourth" name="QueryOnThyroxine" required="required">
+	        </select>
+	        <h3>QueryOnThyroxine</h3><select id="fourth" name="QueryOnThyroxine" required="required">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-	    </select>
+	        </select>
             <h3>On Anti Thyroid Medication</h3><select id="fifth" name="OnAntiThyroidMedication" required="required">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-	    </select>
+	        </select>
             <h3>Sick</h3><select id="sixth" name="Sick" required="required">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-	    </select> 
+	        </select>
             <h3>Pregnant</h3><select id="seventh" name="Pregnant" required="required">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
@@ -42,39 +42,39 @@
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
-	    <h3>QueryHypothyroid</h3><select id="tenth" name="QueryHypothyroid" required="required">
+	        <h3>QueryHypothyroid</h3><select id="tenth" name="QueryHypothyroid" required="required">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-	    </select>
-	    <h3>QueryHyperthyroid</h3><select id="eleventh" name="QueryHyperthyroid" required="required">
+	        </select>
+	        <h3>QueryHyperthyroid</h3><select id="eleventh" name="QueryHyperthyroid" required="required">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
-	    </select>
-	    <h3>Lithium</h3><select id="twelth" name="Lithium" id="research" required="required">
-                <option value="Yes">Yes</option>
-                <option value="No">No</option>
-            </select>
-	    <h3>Goitre</h3><select id="thirteenth" name="Goitre" id="research" required="required">
+	        </select>
+	        <h3>Lithium</h3><select id="twelth" name="Lithium" required="required">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
-	    <h3>Tumor</h3><select id="fourteenth" name="Tumor" id="research" required="required">
+	        <h3>Goitre</h3><select id="thirteenth" name="Goitre"  required="required">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
-	    <h3>Hypopituritory</h3><select id="fifeteenth" name="Hypopituritory" id="research" required="required">
+	        <h3>Tumor</h3><select id="fourteenth" name="Tumor" required="required">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
-	    <h3>Psych</h3><select id="sixteenth" name="Psych" id="research" required="required">
+	        <h3>Hypopituritory</h3><select id="fifeteenth" name="Hypopituritory"  required="required">
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
-	    <h3>T3</h3><input id="seventeenth" name="T3" id="research" required="required">
-	    <h3>T4U</h3><input id="eightteenth" name="T4U" id="research" required="required">
-	    <h3>ReferralSourceOther ()</h3><input id="nineteenth" name="ReferralSourceOther" required="required">
+	        <h3>Psych</h3><select id="sixteenth" name="Psych" required="required">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+	        <h3>T3</h3><input id="seventeenth" name="T3" required="required">
+	        <h3>T4U</h3><input id="eightteenth" name="T4U" required="required">
+	        <h3>ReferralSourceOther</h3><input type="number" id="nineteenth" name="ReferralSourceOther" required="required">
 	    
-	    <br><br><button id="sub" type="submit ">Find Person is Having Disease or Not</button>
+	        <br><br><button id="sub" type="submit">Find Person is Having Disease or Not</button>
             <br>
         </form>
         <br><br><h3>{{ prediction_texts}}</h3>
